@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 
-	"go.lesson/basics/internal/arrays"
 	_ "go.lesson/basics/internal/inits"
 	"go.lesson/basics/internal/returns"
+	"go.lesson/basics/internal/arrays"
+	"go.lesson/basics/internal/slices"
 )
 
 func onlySlices() {
@@ -13,6 +14,13 @@ func onlySlices() {
 	// numbers := []int{1,2,3}
 	// numbers := make([]int, 5)
 	arrays.Print(numbers)
+	arrays.Change(numbers)
+	arrays.Print(numbers)
+
+	slice := numbers[:]
+	slices.Print(slice)
+	slices.Change(slice)
+	slices.Print(slice)
 }
 
 func main() {
