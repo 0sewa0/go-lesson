@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
+	"go.lesson/basics/internal/arrays"
 	_ "go.lesson/basics/internal/inits"
 	"go.lesson/basics/internal/returns"
-	"go.lesson/basics/internal/arrays"
 	"go.lesson/basics/internal/slices"
 )
 
@@ -21,6 +21,9 @@ func onlySlices() {
 	slices.Print(slice)
 	slices.Change(slice)
 	slices.Print(slice)
+	slice = append(slice, 1)
+
+
 }
 
 func main() {
@@ -33,5 +36,4 @@ func main() {
 
 	animal := returns.NotAnnoying()
 	fmt.Println(animal)
-
 }

@@ -14,7 +14,6 @@ func MapsGoBoom() {
 func SlicesAreSafe() {
 	var safe []string
 	// boomer := make(map[string]string)
-	// boomer := map[string]string{}
 
 	for range safe {
 		fmt.Print("nothing")
@@ -23,4 +22,10 @@ func SlicesAreSafe() {
 	for range safe {
 		fmt.Print("something")
 	}
+}
+
+type MyError int
+
+func (i MyError) Error() string {
+	return fmt.Sprintf("%d", i)
 }

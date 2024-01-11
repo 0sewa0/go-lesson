@@ -1,6 +1,8 @@
 package slices
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func Print(numbers []int) {
 	for _, number := range numbers {
@@ -10,6 +12,12 @@ func Print(numbers []int) {
 }
 
 func Change(numbers []int) {
+	for i, number := range numbers {
+		numbers[i] = number + 1
+	}
+}
+
+func List(numbers ...int) {
 	for i, number := range numbers {
 		numbers[i] = number + 1
 	}

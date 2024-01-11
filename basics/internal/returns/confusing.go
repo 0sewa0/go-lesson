@@ -25,3 +25,11 @@ func NotAnnoying() Animal {
 		9,
 	}
 }
+
+func BadRename(animal Animal, newName string) {
+	animal.Name = newName
+}
+
+func GoodRename(animal *Animal, newName string) {
+	animal.Name = newName
+}
