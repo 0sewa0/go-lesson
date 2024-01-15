@@ -57,7 +57,7 @@ func (b *Builder) WithEmptyEyes() *Builder {
 
 func (b Builder) Build() snowman {
 	return b.snowman
-}
+} // Why not return a reference?
 
 func NewBuilder() Builder {
 	return Builder{}
