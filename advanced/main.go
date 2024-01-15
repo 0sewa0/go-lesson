@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"go.lesson/advanced/internal/concurrency"
 	"go.lesson/advanced/internal/snowman"
 	// "go.lesson/basics/internal/slices" // Would this work?
 )
@@ -12,6 +13,7 @@ import (
 func main() {
 	methods()
 	types()
+	concurrent()
 }
 
 func methods() {
@@ -115,4 +117,20 @@ func usingAny(thing any) {
 	if ok {
 		fmt.Println("Its a Hugger")
 	}
+}
+
+func concurrent() {
+	fmt.Println("\n\n---About concurrency---")
+
+	fmt.Println("\n-With Mutex-")
+	counter := &concurrency.CharCounter{}
+	fmt.Println(counter.Count('a', "vjhasbhdbahbdakxbnkajbkahjbkanjkhabxjkhabkabvjvajhkabkljabkjhbkjabjhagvjabjavjabj"))
+
+	fmt.Println("\n-With Channels-")
+
+	count := concurrency.CountChars('a', "vjhasbhdbahbdakxbnkajbkahjbkanjkhabxjkhabkabvjvajhkabkljabkjhbkjabjhagvjabjavjabj")
+	fmt.Println(count)
+
+	fmt.Println("\n-About Contexts-")
+	concurrency.ContextMaze()
 }
