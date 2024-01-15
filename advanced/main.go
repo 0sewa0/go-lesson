@@ -62,7 +62,7 @@ func types() {
 	for _, thing := range snowThings {
 		err := thing.Hug(10) // what about "Range uses values instead of references"?
 		if err != nil {
-			switch err.(type) { // why is Goland complaining? (discuss https://go.dev/tour/methods/16, and why it's bad)
+			switch err.(type) { // why is Goland complaining?
 			case snowman.GotStabbedError:
 				isPirate = true
 			case snowman.TooSmallToHugError:
@@ -87,8 +87,8 @@ func meltAll(things []snowman.Melter) {
 	fmt.Println("\n-Start melt-")
 	startTemp := -4
 	melted := 0
-MELT: // PLS, don't do this. 😅
-	for melted != len(things) {
+MELT:
+	for melted != len(things) { // PLS, don't do this. 😅
 		startTemp += 1
 		for _, thing := range things {
 			err := thing.Melt(startTemp)
